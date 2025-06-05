@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Analytics Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <div class="header__left">
+                        <h1 class="header__title">SEO Analytics Dashboard</h1>
+                        <div class="header__meta">
+                            <span class="header__date" id="currentDate"></span>
+                            <span class="header__updated">Last updated: <span id="lastUpdated"></span></span>
+                        </div>
+                    </div>
+                    <div class="header__actions">
+                        <button class="btn btn--outline btn--sm" id="themeToggle">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                        <button class="btn btn--secondary btn--sm">New Project</button>
+                        <button class="btn btn--primary btn--sm">Generate Report</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Key Metrics Overview -->
+        <section class="metrics-section">
+            <div class="container">
+                <div class="metrics-grid" id="metricsGrid">
+                    <!-- Metrics cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Navigation -->
+        <nav class="nav-tabs">
+            <div class="container">
+                <div class="nav-tabs__list">
+                    <button class="nav-tab active" data-tab="overview">Project Overview</button>
+                    <button class="nav-tab" data-tab="keywords">Keyword Analysis</button>
+                    <button class="nav-tab" data-tab="tools">SEO Tools</button>
+                    <button class="nav-tab" data-tab="trends">2025 Trends</button>
+                    <button class="nav-tab" data-tab="reports">Reports & Analytics</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Tab 1: Project Overview -->
+                <div class="tab-content active" id="tab-overview">
+                    <div class="section-header">
+                        <h2>SEO Project Overview</h2>
+                        <div class="filters">
+                            <select class="form-control filter-select" id="priorityFilter">
+                                <option value="">All Priorities</option>
+                                <option value="High">High Priority</option>
+                                <option value="Medium">Medium Priority</option>
+                                <option value="Low">Low Priority</option>
+                            </select>
+                            <select class="form-control filter-select" id="statusFilter">
+                                <option value="">All Status</option>
+                                <option value="completed">Completed</option>
+                                <option value="pending">Pending</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="project-phases" id="projectPhases">
+                        <!-- Project phases will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Tab 2: Keyword Analysis -->
+                <div class="tab-content" id="tab-keywords">
+                    <div class="section-header">
+                        <h2>Keyword Analysis</h2>
+                        <div class="search-container">
+                            <input type="text" class="form-control" id="keywordSearch" placeholder="Search keywords...">
+                        </div>
+                    </div>
+                    
+                    <div class="keyword-chart">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749015350/pplx_code_interpreter/d81baed2_h55ocm.jpg" alt="Keyword Opportunity Analysis" class="chart-image">
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table" id="keywordTable">
+                            <thead>
+                                <tr>
+                                    <th data-sort="keyword">Keyword <span class="sort-icon">↕</span></th>
+                                    <th data-sort="volume">Volume <span class="sort-icon">↕</span></th>
+                                    <th data-sort="difficulty">Difficulty <span class="sort-icon">↕</span></th>
+                                    <th data-sort="rank">Current Rank <span class="sort-icon">↕</span></th>
+                                    <th data-sort="target">Target Rank <span class="sort-icon">↕</span></th>
+                                    <th data-sort="cpc">CPC <span class="sort-icon">↕</span></th>
+                                    <th data-sort="intent">Intent <span class="sort-icon">↕</span></th>
+                                    <th data-sort="opportunity">Opportunity <span class="sort-icon">↕</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="keywordTableBody">
+                                <!-- Keyword data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab 3: SEO Tools -->
+                <div class="tab-content" id="tab-tools">
+                    <div class="section-header">
+                        <h2>SEO Tools Comparison</h2>
+                        <div class="filters">
+                            <select class="form-control filter-select" id="categoryFilter">
+                                <option value="">All Categories</option>
+                                <option value="Free Analytics">Free Analytics</option>
+                                <option value="Paid All-in-One">Paid All-in-One</option>
+                                <option value="Content Optimization">Content Optimization</option>
+                                <option value="Technical SEO">Technical SEO</option>
+                                <option value="Keyword Research">Keyword Research</option>
+                            </select>
+                            <select class="form-control filter-select" id="costFilter">
+                                <option value="">All Costs</option>
+                                <option value="free">Free</option>
+                                <option value="low">$1-50</option>
+                                <option value="mid">$51-100</option>
+                                <option value="high">$101+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="tools-chart">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749015199/pplx_code_interpreter/2ca1fe69_g2vyt4.jpg" alt="SEO Tools Cost Analysis" class="chart-image">
+                    </div>
+                    
+                    <div class="table-container">
+                        <table class="data-table" id="toolsTable">
+                            <thead>
+                                <tr>
+                                    <th>Tool Name</th>
+                                    <th>Category</th>
+                                    <th>Monthly Cost</th>
+                                    <th>Key Features</th>
+                                    <th>AI Integration</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="toolsTableBody">
+                                <!-- Tools data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="budget-calculator card">
+                        <div class="card__body">
+                            <h3>Budget Calculator</h3>
+                            <div class="budget-summary">
+                                <p>Selected Tools Cost: <span class="budget-total" id="budgetTotal">$0</span>/month</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: 2025 Trends -->
+                <div class="tab-content" id="tab-trends">
+                    <div class="section-header">
+                        <h2>SEO Trends 2025</h2>
+                        <p class="section-subtitle">Stay ahead with the latest SEO developments and industry priorities</p>
+                    </div>
+                    
+                    <div class="trends-chart">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749015261/pplx_code_interpreter/8b00d60f_kve67a.jpg" alt="2025 SEO Trends Adoption Rates" class="chart-image">
+                    </div>
+                    
+                    <div class="trends-grid" id="trendsGrid">
+                        <!-- Trends will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Tab 5: Reports & Analytics -->
+                <div class="tab-content" id="tab-reports">
+                    <div class="section-header">
+                        <h2>Reports & Analytics</h2>
+                        <p class="section-subtitle">Generate comprehensive SEO reports and export data</p>
+                    </div>
+                    
+                    <div class="reports-grid">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Quick Reports</h3>
+                                <div class="report-buttons">
+                                    <button class="btn btn--primary btn--full-width">SEO Audit Report</button>
+                                    <button class="btn btn--primary btn--full-width">Keyword Performance</button>
+                                    <button class="btn btn--primary btn--full-width">Competitor Analysis</button>
+                                    <button class="btn btn--primary btn--full-width">Technical SEO Report</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Automated Reporting</h3>
+                                <div class="form-group">
+                                    <label class="form-label">Report Frequency</label>
+                                    <select class="form-control">
+                                        <option>Weekly</option>
+                                        <option>Monthly</option>
+                                        <option>Quarterly</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Recipients</label>
+                                    <input type="email" class="form-control" placeholder="Enter email addresses">
+                                </div>
+                                <button class="btn btn--secondary btn--full-width">Setup Automation</button>
+                            </div>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Export Options</h3>
+                                <div class="export-buttons">
+                                    <button class="btn btn--outline btn--full-width" id="exportPDF">Export as PDF</button>
+                                    <button class="btn btn--outline btn--full-width" id="exportCSV">Export as CSV</button>
+                                    <button class="btn btn--outline btn--full-width" id="exportJSON">Export as JSON</button>
+                                    <button class="btn btn--outline btn--full-width" id="printReport">Print Report</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__left">
+                        <p>&copy; 2025 SEO Analytics Dashboard. All rights reserved.</p>
+                    </div>
+                    <div class="footer__right">
+                        <a href="#" target="_blank">Documentation</a>
+                        <a href="#" target="_blank">API</a>
+                        <span class="version">v2.1.0</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

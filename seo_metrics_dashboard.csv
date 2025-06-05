@@ -1,0 +1,13 @@
+Metric,Current_Value,Target_Value,Improvement_Needed,Category
+Organic Traffic,15420.0,25000.0,+62%,Traffic
+Keyword Rankings,245.0,400.0,+63%,Rankings
+Backlinks,1250.0,2000.0,+60%,Authority
+Domain Authority,42.0,55.0,+31%,Authority
+Page Load Speed,2.8,2.0,+29%,Technical
+Core Web Vitals Score,78.0,90.0,+15%,Technical
+Indexed Pages,890.0,1200.0,+35%,Technical
+Click-Through Rate,3.2,5.0,+56%,Engagement
+Bounce Rate,65.0,45.0,+31%,Engagement
+Conversion Rate,2.8,4.5,+61%,Conversion
+Local Pack Rankings,5.0,3.0,+40%,Local
+Brand Mentions,89.0,150.0,+69%,Brand
